@@ -36,14 +36,20 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="ace-icon fa fa-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="{{route('home')}}">Home</a>
 							</li>
+                            @if (Request::segment(2)!='')
+                                <li>
+                                    <a href="{{url(Request::segment(1).'/'.Request::segment(2))}}">{{ucfirst(Request::segment(2))}}</a>
+                                </li>
+                            @endif
 
-							<li>
-								<a href="#">Other Pages</a>
-							</li>
-							<li class="active">Blank Page</li>
-						</ul><!-- /.breadcrumb -->
+                            @if (Request::segment(3)!='')
+                                <li class="active">{{ucfirst(Request::segment(3))}} {{Request::segment(3)==''?'':ucfirst(Request::segment(2))}}</li>
+                            @endif
+
+
+                        </ul><!-- /.breadcrumb -->
 
 						<div class="nav-search" id="nav-search">
 							<form class="form-search">

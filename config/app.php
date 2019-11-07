@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'MLM'),
+    'company'=>env('APP_COMPANY'),
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +68,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Phnom_Penh',
 
     /*
     |--------------------------------------------------------------------------
@@ -167,7 +168,7 @@ return [
          */
         BC\Laravel\DropboxDriver\ServiceProvider::class,
         RealRashid\SweetAlert\SweetAlertServiceProvider::class,
-        
+
         /*
          * Application Service Providers...
          */

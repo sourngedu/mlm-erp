@@ -1,87 +1,103 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <!-- Meta, title, CSS, favicons, etc. -->
-  <meta charset="utf-8">
-  <title>AdminDesigns - SHARED ON THEMELOCK.COM</title>
-  <meta name="keywords" content="HTML5 Bootstrap 3 Admin Template UI Theme" />
-  <meta name="description" content="AdminDesigns - SHARED ON THEMELOCK.COM">
-  <meta name="author" content="AdminDesigns">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Font CSS (Via CDN) -->
-  <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800'>
-  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,500,700,300">
-  <!-- Theme CSS -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/skin/default_skin/css/theme.css')}}">
-  <!-- Admin Forms CSS -->
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/admin-tools/admin-forms/css/admin-forms.css')}}">
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="{{ asset('assets/img/favicon.ico')}}">
+<html lang="en">
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta charset="utf-8" />
+         <title>Login {{ config('app.name') }}</title>
 
-</head>
+        <meta name="description" content="User login page" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-<body class="external-page sb-l-c sb-r-c">
-    <!-- Start: Main -->
-    <div id="main" class="animated fadeIn">
-        <!-- Start: Content-Wrapper -->
-        <section id="content_wrapper">
-            <!-- begin canvas animation bg -->
-            <div id="canvas-wrapper">
-                <canvas id="demo-canvas"></canvas>
-            </div>
-            <!-- Begin: Content -->
-            <section id="content">
-              
-              @yield('content')
+        <!-- bootstrap & fontawesome -->
+        <link rel="stylesheet" href="{{asset('ace/css/bootstrap.min.css')}}" />
+        <link rel="stylesheet" href="{{asset('ace/font-awesome/4.5.0/css/font-awesome.min.css')}}" />
 
-            </section>
-            <!-- End: Content -->
+        <!-- text fonts -->
+        <link rel="stylesheet" href="{{asset('ace/css/fonts.googleapis.com.css')}}" />
 
-        </section>
-        <!-- End: Content-Wrapper -->
+        <!-- ace styles -->
+        <link rel="stylesheet" href="{{asset('ace/css/ace.min.css')}}" />
 
-    </div>
-    <!-- End: Main -->
+        <!--[if lte IE 9]>
+            <link rel="stylesheet" href="{{asset('ace/css/ace-part2.min.css')}}" />
+        <![endif]-->
+        <link rel="stylesheet" href="{{asset('ace/css/ace-rtl.min.css')}}" />
 
-    <!-- BEGIN: PAGE SCRIPTS -->
+        <!--[if lte IE 9]>
+        <link rel="stylesheet" href="{{asset('ace/css/ace-ie.min.css')}}" />
+        <![endif]-->
 
-    <!-- jQuery -->
-    <script type="text/javascript" src="{{ asset('vendor/jquery/jquery-1.11.1.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('vendor/jquery/jquery_ui/jquery-ui.min.js')}}"></script>
+        <!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
 
-    <!-- Bootstrap -->
-    <script type="text/javascript" src="{{ asset('assets/js/bootstrap/bootstrap.min.js')}}"></script>
+        <!--[if lte IE 8]>
+        <script src="{{asset('ace/js/html5shiv.min.js')}}"></script>
+        <script src="{{asset('ace/js/respond.min.js')}}"></script>
+        <![endif]-->
+    </head>
 
-    <!-- Page Plugins -->
-    {{-- <script type="text/javascript" src="{{ asset('assets/js/pages/login/EasePack.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/pages/login/rAF.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/pages/login/TweenLite.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/pages/login/login.js')}}"></script> --}}
+    <body class="login-layout">
 
-    <!-- Theme Javascript -->
-    <script type="text/javascript" src="{{ asset('assets/js/utility/utility.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/main.js')}}"></script>
-    {{-- <script type="text/javascript" src="{{ asset('assets/js/demo.js')}}"></script> --}}
 
-    <!-- Page Javascript -->
-    {{-- <script type="text/javascript">
-        jQuery(document).ready(function() {
-            "use strict";
-            // Init Theme Core      
-            Core.init();
-            // Init Demo JS
-            Demo.init();
-            // Init CanvasBG and pass target starting location
-            CanvasBG.init({
-                Loc: {
-                    x: window.innerWidth / 2,
-                    y: window.innerHeight / 3.3
-                },
+
+        <div class="main-container">
+            <div class="main-content">
+
+                @yield('content')
+            </div><!-- /.main-content -->
+        </div><!-- /.main-container -->
+
+        <!-- basic scripts -->
+
+        <!--[if !IE]> -->
+        <script src="{{asset('ace/js/jquery-2.1.4.min.js')}}"></script>
+
+        <!-- <![endif]-->
+
+        <!--[if IE]>
+<script src="{{asset('ace/js/jquery-1.11.3.min.js')}}"></script>
+<![endif]-->
+        <script type="text/javascript">
+            if('ontouchstart' in document.documentElement) document.write("<script src='{{asset('ace/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+        </script>
+
+        <!-- inline scripts related to this page -->
+        <script type="text/javascript">
+            jQuery(function($) {
+            $(document).on('click', '.toolbar a[data-target]', function(e) {
+                e.preventDefault();
+                var target = $(this).data('target');
+                $('.widget-box.visible').removeClass('visible');//hide others
+                $(target).addClass('visible');//show target
             });
-        });
-    </script> --}}
-    <!-- END: PAGE SCRIPTS -->
+            });
 
-</body>
 
+
+            //you don't need this, just used for changing background
+            jQuery(function($) {
+            $('#btn-login-dark').on('click', function(e) {
+                $('body').attr('class', 'login-layout');
+                $('#id-text2').attr('class', 'white');
+                $('#id-company-text').attr('class', 'blue');
+
+                e.preventDefault();
+            });
+            $('#btn-login-light').on('click', function(e) {
+                $('body').attr('class', 'login-layout light-login');
+                $('#id-text2').attr('class', 'grey');
+                $('#id-company-text').attr('class', 'blue');
+
+                e.preventDefault();
+            });
+            $('#btn-login-blur').on('click', function(e) {
+                $('body').attr('class', 'login-layout blur-login');
+                $('#id-text2').attr('class', 'white');
+                $('#id-company-text').attr('class', 'light-blue');
+
+                e.preventDefault();
+            });
+
+            });
+        </script>
+    </body>
 </html>

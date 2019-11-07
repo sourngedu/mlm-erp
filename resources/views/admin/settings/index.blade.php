@@ -1,20 +1,20 @@
-{{-- \resources\views\users\index.blade.php --}}
+
 @extends('layouts.backend.ace_layout')
 
 @section('title', '| Permissons')
 
 @section('content')
-	<div class="row">
+
 		<div class="col-xs-12 ">
 			<h1><i class="fa fa-key"></i> Permissions
 		</div>
-    </div>
+
     <hr class="hr-6">
-	<div class="row">
+
 		<div class="col-xs-12 ">
 			@include('admin.settings.includes.buttons')
 		</div>
-	</div>
+
 	@include('admin.settings.includes.table')
 
 @endsection
@@ -52,7 +52,7 @@
 
 
 
-{{-- 
+{{--
 @extends('layouts.backend.ace_layout')
 
 @section('content')

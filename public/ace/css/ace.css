@@ -1242,7 +1242,7 @@ pre.prettyprint {
     -webkit-box-shadow: none;
     box-shadow: none;
     min-height: 45px;
-    background: #ec213d;
+    background: #337ab7;
 }
 
 .navbar .navbar-link,
@@ -1371,7 +1371,7 @@ pre.prettyprint {
 }
 
 .ace-nav>li.light-blue>a {
-    background-color: #ea1533
+    background-color: #337ab7
 }
 
 .ace-nav>li.light-blue>a:focus,

@@ -1,4 +1,4 @@
-<div class="row">
+
   <div class="col-xs-12">
     {{-- <div class="clearfix">
       <span class="pull-right tableTools-container"></span>
@@ -78,7 +78,7 @@
       </table>
     </div>
   </div>
-</div>
+
 
 
 {{-- <table class="table table-striped table-hover" id="datatable2" cellspacing="0" width="100%">

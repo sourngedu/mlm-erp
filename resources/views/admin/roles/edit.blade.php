@@ -1,7 +1,7 @@
 @extends('layouts.backend.ace_layout')
 
 @section('pagetitle','Roles | Edit')
-		
+
 
 @push('css')
 
@@ -9,10 +9,7 @@
 
 @section('content')
 	<div class="main-content">
-		<div class="main-content-inner">
-			<div class="page-content">
-				<div class="row">
-					<div class="col-xs-12 ">
+	    		<div class="col-xs-12 ">
 					@include('admin.roles.includes.buttons')
 					<h4 class="header large lighter blue"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Manage Roles</h4>
 					<!-- PAGE CONTENT BEGINS -->
@@ -40,9 +37,7 @@
 							{!! Form::close() !!}
 
 						</div><!-- /.col -->
-					</div><!-- /.row -->
-				</div><!-- /.page-content -->
-			</div>
+
 	</div><!-- /.main-content -->
 @endsection
 

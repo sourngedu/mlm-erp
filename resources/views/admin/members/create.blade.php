@@ -7,10 +7,8 @@
 	<div class="main-content">
 		<div class="main-content-inner">
 			<div class="page-content">
-				{{-- <div class="page-header">
-
-                </div> --}}
-                <!-- /.page-header -->
+				<div class="page-header">
+				</div><!-- /.page-header -->
 
 						<div class="col-xs-12 ">
 						@include('admin.users.includes.buttons')

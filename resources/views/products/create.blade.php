@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.backend.ace_layout')
 
 
 @section('content')
-    <div class="row">
+    {{-- <div class="row"> --}}
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2>Add New Product</h2>
@@ -11,7 +11,7 @@
                 <a class="btn btn-primary" href="{{ route('admin.products.index') }}"> Back</a>
             </div>
         </div>
-    </div>
+    {{-- </div> --}}
 
 
     @if ($errors->any())
@@ -30,7 +30,7 @@
     	@csrf
 
 
-         <div class="row">
+         {{-- <div class="row"> --}}
 		    <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="form-group">
 		            <strong>Name:</strong>
@@ -46,7 +46,7 @@
 		    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 		            <button type="submit" class="btn btn-primary">Submit</button>
 		    </div>
-		</div>
+		{{-- </div> --}}
 
 
     </form>

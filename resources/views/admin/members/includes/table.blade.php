@@ -16,19 +16,20 @@
 								<span class="lbl"></span>
 							</label>
 						</th>
-						<th>S.N.</th>
-						<th>User Detail</th>
-						<th>Image</th>
-						<th>User Type</th>
+                        <th>S.N.</th>
+                        <th>Profile</th>
+						<th>Member</th>
+						<th>Left / Rith Total</th>
+						<th>Package Amount</th>
 						<th>Status</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 					<tbody>
-						@if (isset($users) && $users->count() > 0)
-							{!! Form::open(['route' => 'admin.users.index', 'id' => 'bulk_action_form']) !!}
+						@if (isset($members) && $members->count() > 0)
+							{!! Form::open(['route' => 'admin.members.index', 'id' => 'bulk_action_form']) !!}
 							@php($i = 1)
-							@foreach($users as $row)
+							@foreach($members as $row)
 								<tr>
 									<td class="center">
 										<label>
@@ -36,34 +37,45 @@
 											<span class="lbl"></span>
 										</label>
 									</td>
-									<td>{{ $i }}</td>
+                                    <td>{{ $i }}</td>
+                                    <td>
+                                        @if ($row->user->profile_image)
+                                            <img src="{{ asset('images/user/'.$row->user->profile_image) }}" width="80px">
+                                        @else
+                                            <p>No image</p>
+                                        @endif
+                                    </td>
 									<td>
-										<b>{{ $row->name }}</b>
-										<hr class="hr-2">
+                                        <b> {{ $row->user->name }}</b>
+                                        <hr class="hr-2">
+                                        <i>{{ $row->username }}</i>
+                                        <hr class="hr-2">
+                                        <i>{{ $row->user->id }}</i>
+
+
+
+
 										{{-- {{ $row->contact_number }}
 										<hr class="hr-2"> --}}
-										{{ $row->email }}
+
 										{{-- <hr class="hr-2">
 										{{ $row->address }} --}}
 									</td>
 									<td>
-										@if ($row->profile_image)
+                                            Left Total :{{ $row->left_total }} $
+                                            <hr class="hr-2">
+                                            Ritht Total :{{ $row->right_total }} $
+                                    {{-- @if ($row->profile_image)
 											<img src="{{ asset('images/user/'.$row->profile_image) }}" width="80px">
 										@else
 											<p>No image</p>
-										@endif
+										@endif --}}
 									</td>
 									<td>
-										@php($roles = $row->roles)
-										@if(isset($roles) && $roles->count() > 0)
-											@foreach($roles as $role)
-												<div class="label label-info arrowed-right arrowed-in">
-														{{ $role->display_name }}
-												</div>
-												<hr class="hr-2">
-											@endforeach
-										@endif
-										{{-- {{  $row->roles()->pluck('name')->implode(' ') }} --}}
+                                           PKAmt : {{ $row->package->package_amount }} $
+                                            <hr class="hr-2">
+                                            {{ $row->package_amount }}
+
 									</td>
 									<td class="hidden-480 ">
 										<div class="btn-group">

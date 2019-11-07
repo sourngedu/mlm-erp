@@ -1,8 +1,8 @@
-@extends('layouts.app')
-
+{{-- @extends('layouts.app') --}}
+@extends('layouts.backend.ace_layout')
 
 @section('content')
-    <div class="row">
+    {{-- <div class="row"> --}}
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
                 <h2> Show Product</h2>
@@ -11,9 +11,9 @@
                 <a class="btn btn-primary" href="{{ route('admin.products.index') }}"> Back</a>
             </div>
         </div>
-    </div>
+    {{-- </div> --}}
 
-    <div class="row">
+    {{-- <div class="row"> --}}
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
@@ -26,6 +26,6 @@
                 {{ $product->detail }}
             </div>
         </div>
-    </div>
+    {{-- </div> --}}
 <p class="text-center text-primary"><small>Tutorial by applephagna@gmail.com</small></p>
 @endsection

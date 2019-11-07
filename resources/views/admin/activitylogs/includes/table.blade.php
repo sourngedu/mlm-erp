@@ -1,4 +1,4 @@
-<div class="row">
+{{-- <div class="row"> --}}
   <div class="col-xs-12">
     {{-- <div class="clearfix">
       <span class="pull-right tableTools-container"></span>
@@ -48,4 +48,4 @@
       </table>
     </div>
   </div>
-</div>
+{{-- </div> --}}

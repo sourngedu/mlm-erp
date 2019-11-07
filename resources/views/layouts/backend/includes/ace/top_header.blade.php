@@ -6,10 +6,10 @@
     <span class="icon-bar"></span>
   </button>
   <div class="navbar-header pull-left">
-    <a href="index.html" class="navbar-brand">
+    <a href="{{ route('home')}}" class="navbar-brand">
       <small>
-        <i class="fa fa-leaf"></i>
-        SourngEdu Admin
+        <i class="fa fa-users"></i>
+        {{ config('app.name') }}
       </small>
     </a>
   </div>
@@ -307,7 +307,7 @@
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
-            </form>	
+            </form>
           </li>
         </ul>
       </li>
@@ -523,5 +523,5 @@
           </li>
         {{-- @endability --}}
       </ul>
-    </nav>  
+    </nav>
 </div><!-- /.navbar-container -->

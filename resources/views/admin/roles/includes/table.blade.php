@@ -1,4 +1,4 @@
-<div class="row">
+
 	<div class="col-xs-12">
 		{{-- <div class="clearfix">
 			<span class="pull-right tableTools-container"></span>
@@ -54,10 +54,10 @@
 											{{csrf_field()}}
 											{{method_field('DELETE')}}
 											<a href="#" class="tooltip-error" onclick="deleteObject({{$role->id}})" data-rel="tooltip" title="Delete-{{$role->name}}">
-												<center>                                    
+												<center>
 													<span class="red">
 														<i class="ace-icon fa fa-trash-o bigger-120"></i>
-													</span>                               
+													</span>
 												</center>
 											</a>
 										</form>
@@ -72,10 +72,10 @@
 											{{csrf_field()}}
 											{{method_field('DELETE')}}
 											<a href="#" class="tooltip-error" onclick="deleteObject($role->id)" data-rel="tooltip" title="Delete-{{$role->name}}">
-												<center>                                    
+												<center>
 													<span class="red">
 														<i class="ace-icon fa fa-trash-o bigger-120"></i>
-													</span>                               
+													</span>
 												</center>
 											</a>
 										</form>
@@ -91,4 +91,4 @@
 			</table>
 		</div>
 	</div>
-</div>
+

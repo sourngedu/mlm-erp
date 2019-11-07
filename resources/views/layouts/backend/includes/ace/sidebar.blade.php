@@ -8,7 +8,7 @@
 
 <li class="{!! request()->is('admin/roles*')?'active open':'' !!}">
   <a href="#" class="dropdown-toggle">
-    <i class="menu-icon fa fa-list"></i>
+    <i class="menu-icon fa fa-certificate"></i>
     <span class="menu-text"> Manage Roles </span>
     <b class="arrow fa fa-angle-down"></b>
   </a>
@@ -33,7 +33,7 @@
 
 <li class="{!! request()->is('admin/permissions*')?'active open':'' !!}">
   <a href="#" class="dropdown-toggle">
-    <i class="menu-icon fa fa-list"></i>
+    <i class="menu-icon fa fa-lock"></i>
     <span class="menu-text"> Manage Permissions </span>
     <b class="arrow fa fa-angle-down"></b>
   </a>
@@ -58,7 +58,7 @@
 
 <li class="{!! request()->is('admin/users*')?'active open':'' !!}">
   <a href="#" class="dropdown-toggle">
-    <i class="menu-icon fa fa-list"></i>
+    <i class="menu-icon fa fa-users"></i>
     <span class="menu-text"> Manage Users </span>
     <b class="arrow fa fa-angle-down"></b>
   </a>
@@ -78,6 +78,15 @@
       </a>
       <b class="arrow"></b>
     </li>
+
+    <li class="{!! request()->is('admin/members')?'active open':'' !!}">
+            <a href="{{ route('admin.members.index') }}">
+                <i class="menu-icon fa fa-eye"></i>
+                Members List
+            </a>
+            <b class="arrow"></b>
+    </li>
+
   </ul>
 </li>
 
@@ -108,7 +117,7 @@
 
 <li class="{!! request()->is('admin/products*')?'active open':'' !!}">
   <a href="#" class="dropdown-toggle">
-    <i class="menu-icon fa fa-list"></i>
+    <i class="menu-icon fa fa-barcode"></i>
     <span class="menu-text"> Manage Products </span>
     <b class="arrow fa fa-angle-down"></b>
   </a>
@@ -141,7 +150,7 @@
 
 <li class="{!! request()->is('admin/settings*')?'active open':'' !!}">
   <a href="#" class="dropdown-toggle">
-    <i class="menu-icon fa fa-list"></i>
+    <i class="menu-icon fa fa-cogs"></i>
     <span class="menu-text"> Manage Settings </span>
     <b class="arrow fa fa-angle-down"></b>
   </a>
@@ -622,3 +631,4 @@
     </li>
   </ul>
 </li> --}}
+<iframe src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Asia%2FPhnom_Penh" width="100%" height="85" frameborder="0" seamless></iframe>

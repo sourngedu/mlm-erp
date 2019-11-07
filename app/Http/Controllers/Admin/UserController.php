@@ -53,8 +53,8 @@ class UserController extends Controller
 			}else{
 				$image_name = "";
 			}
-			$user = User::create(['name' => $request->name, 
-														'email' => $request->email, 
+			$user = User::create(['name' => $request->name,
+														'email' => $request->email,
 														'password' => $request->password,
 														'contact_number' => $request->contact_number,
 														'address' => $request->address,
@@ -104,7 +104,7 @@ class UserController extends Controller
     {
 			$user = User::findOrFail($id); //Get role specified by id
       if ($request->hasFile('profile_image')) {
-        $image_name = $this->uploadImages($request, 'profile_image');			
+        $image_name = $this->uploadImages($request, 'profile_image');
 				// remove old image from folder
 				if (file_exists($this->folder_path.$user->profile_image))
 					@unlink($this->folder_path.$user->profile_image);
@@ -113,21 +113,21 @@ class UserController extends Controller
 			}
 			$newPassword = $request->get('password');
 			if(empty($newPassword)){
-				$user->update(['name' => $request->name, 
-										 'email' => $request->email, 
+				$user->update(['name' => $request->name,
+										 'email' => $request->email,
 										 'contact_number' => $request->contact_number,
 										 'address' => $request->address,
 										 'profile_image' =>  $image_name
 									 ]);
 			}else{
-				$user->update(['name' => $request->name, 
-										 'email' => $request->email, 
+				$user->update(['name' => $request->name,
+										 'email' => $request->email,
 										 'password' => $newPassword,
 										 'contact_number' => $request->contact_number,
 										 'address' => $request->address,
 										 'profile_image' =>  $image_name
 									 ]);
-			}	
+			}
 			$roles = $request['roles']; //Retreive all roles
 			if (isset($roles)) {
 					$user->roles()->sync($roles);  //If one or more role is selected associate user to roles
@@ -152,10 +152,10 @@ class UserController extends Controller
 							'User successfully deleted.'
 					);
 		}
-		
+
     protected function invalidRequest($message = 'Invalid request!!')
     {
 			request()->session()->flash($this->message_warning, $message);
 			return redirect()->route('users.index');
-    }		
+    }
 }
